@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+            crossorigin="anonymous"
+        ></script>
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <title>WebVR A-FRAME</title>
+    </head>
+    <body>
+        <div class="d-flex align-items-center min-vh-100">
+            <div class="container">
+                <h2 class="text-center">Choose the Series below:</h2>
+                <div id="card" class="d-flex row"></div>
+            </div>
+        </div>
+
+        <script>
+            var dataCard = [
+                {
+                    judul: 'Series 1',
+                    gambar: 'assets/image/example-img.png',
+                    desc: 'With supporting text below as a natural lead-in to additional content.',
+                    link: 'tutorial.html',
+                    alt: 'Series 1',
+                },
+                {
+                    judul: 'Series 2',
+                    gambar: 'assets/image/example-img.png',
+                    desc: 'With supporting text below as a natural lead-in to additional content.',
+                    link: 'tutorial.html',
+                    alt: 'Series 2',
+                },
+                {
+                    judul: 'Series 3',
+                    gambar: 'assets/image/example-img.png',
+                    desc: 'With supporting text below as a natural lead-in to additional content.',
+                    link: 'tutorial.html',
+                    alt: 'Series 3',
+                },
+                {
+                    judul: 'Series 4',
+                    gambar: 'assets/image/example-img.png',
+                    desc: 'With supporting text below as a natural lead-in to additional content.',
+                    link: 'tutorial.html',
+                    alt: 'Series 4',
+                },
+            ];
+
+            document.getElementById('card').innerHTML = dataCard
+                .map(
+                    (item) =>
+                        `<div class="col-sm-3 my-2 px-2">
+                            <div class="card shadow">
+                                <h5 class="card-header text-center">${item.judul}</h5>
+                                <img class="img-fluid" src="${item.gambar}" alt="${item.alt}" />
+                                <div class="card-body">
+                                    <p class="card-text">${item.desc}</p>
+                                    <div class="d-flex justify-content-end">
+                                        <a href="${item.link}" class="btn btn-primary">Select</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>`
+                )
+                .join(' ');
+        </script>
+    </body>
+</html>

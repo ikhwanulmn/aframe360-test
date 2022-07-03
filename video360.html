@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="apple-mobile-web-app-capable" content="yes" charset="utf-8" />
+        <title>Preview 2K</title>
+        <meta name="description" content="360 Video — A-Frame" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+        <script src="assets/dist/aframe-master.js"></script>
+        <script src="assets/dist/play-on-click.js"></script>
+        <script src="assets/dist/hide-on-play.js"></script>
+        <script src="assets/dist/all.js"></script>
+        <link rel="stylesheet" href="assets/css/style.css" />
+    </head>
+
+    <body>
+        <div id="placeholder_1" class="placeholder">
+            <div class="loader"></div>
+        </div>
+
+        <a-scene stats>
+            <a-assets>
+                <video
+                    id="videoSeri1"
+                    preload="auto"
+                    crossorigin="anonymous"
+                    playsinline
+                    webkit-playsinline
+                    src="https://ucarecdn.com/fadab25d-0b3a-45f7-8ef5-85318e92a261/"
+                ></video>
+            </a-assets>
+            <a-videosphere rotation="0 -90 0" src="#videoSeri1" play-on-click> </a-videosphere>
+
+            <a-camera>
+                <a-entity
+                    position="0 0 -1.5"
+                    text="align:center;
+                    width:6;
+                    wrapCount:100;
+                    color: white;
+                    value: Click or tap to start video"
+                    hide-on-play="#videoSeri1"
+                >
+                </a-entity>
+            </a-camera>
+        </a-scene>
+
+        <!-- <div class="position-relative">
+            <a href="index.html" class="btn btn-primary position-absolute bottom-50 start-50 translate-middle-x">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="3danaglyph1.html" class="btn btn-primary position-absolute bottom-0 end-50 translate-middle-x">
+                <i class="fas fa-angle-left"></i> Back
+            </a>
+        </div> -->
+
+        <script src="assets/dist/buffer.js"></script>
+        <script>
+            $('#videoSeri1').on('ended', function () {
+                console.log('video end');
+                window.location.href = 'index.html';
+            });
+        </script>
+        <!-- Redirect to next page -->
+    </body>
+</html>
